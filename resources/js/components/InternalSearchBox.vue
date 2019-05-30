@@ -48,7 +48,7 @@ export default {
             this.search = value
         },
         navigateToHeading(page, heading) {
-            window.location = '/docs/' + this.version + page.path + '#' + this.slugify(heading)
+            window.location = '/docs/' + page.version + page.path + '#' + this.slugify(heading)
         },
         slugify(heading) {
             return heading.toString().toLowerCase().replace(/\s+/g, '-')
