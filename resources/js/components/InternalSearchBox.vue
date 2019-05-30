@@ -4,19 +4,19 @@
 
         <div class="autocomplete-result">
             <ul v-if="filteredPages.length">
-                <li v-for="page in filteredPages" :key="page.path">
-                    <a :href="'/docs/' + version + page.path"><span class="title">
+                <li :key="index" v-for="(page, index) in filteredPages">
+                    <a :href="'/docs/' + page.version + page.path"><span class="title">
                         <b>
                             {{ page.title }}
                         </b>
                     </span></a>
 
                     <hr>
-                    
-                    <p class="heading"  
-                        v-for="heading in page.headings" 
-                        :key="heading"
-                        @click="navigateToHeading(page, heading)"
+
+                    <p :key="index"
+                       @click="navigateToHeading(page, heading)"
+                       class="heading"
+                       v-for="(heading, index) in page.headings"
                     >{{ heading }}</p>
                 </li>
             </ul>
