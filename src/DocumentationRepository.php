@@ -144,7 +144,7 @@ class DocumentationRepository
      */
     public function search($version)
     {
-        return $this->documentation->index($version);
+        return $this->documentation->index();
     }
 
     /**
